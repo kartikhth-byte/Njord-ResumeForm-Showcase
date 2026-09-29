@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="570" viewBox="0 0 360 570" role="img" aria-labelledby="title desc">
+<title id="title">Worksheet export</title><desc id="desc">The service checks the caller and export permission. An active XLSX template is required. Missing templates return an error. The service loads inputs, writes a workbook, and returns a download.</desc>
+<rect width="360" height="570" rx="12" fill="#f6f8fa"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="#57606a"/></marker></defs>
+<rect x="100" y="18" width="160" height="50" rx="7" fill="#ffffff" stroke="#34708c" stroke-width="1.5"/>
+<text x="180.0" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#172b4d"><tspan x="180.0" dy="0">Export request</tspan></text>
+<rect x="100" y="100" width="160" height="50" rx="7" fill="#ffffff" stroke="#34708c" stroke-width="1.5"/>
+<text x="180.0" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#172b4d"><tspan x="180.0" dy="0">Check access</tspan></text>
+<path d="M180 68 L180 100" fill="none" stroke="#57606a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M180 177 L238 225 L180 273 L122 225 Z" fill="#e8f3f7" stroke="#34708c" stroke-width="1.5"/>
+<text x="180" y="222" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#172b4d"><tspan x="180" dy="0">Active XLSX</tspan><tspan x="180" dy="18">template?</tspan></text>
+<path d="M180 150 L180 177" fill="none" stroke="#57606a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="15" y="322" width="115" height="50" rx="7" fill="#ffffff" stroke="#34708c" stroke-width="1.5"/>
+<text x="72.5" y="352" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#172b4d"><tspan x="72.5" dy="0">Error</tspan></text>
+<rect x="202" y="322" width="143" height="50" rx="7" fill="#ffffff" stroke="#34708c" stroke-width="1.5"/>
+<text x="273.5" y="352" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#172b4d"><tspan x="273.5" dy="0">Load inputs</tspan></text>
+<path d="M122 225 L72 269 L72 322" fill="none" stroke="#57606a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="72" y="294" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#172b4d"><tspan x="72" dy="0">No</tspan></text>
+<path d="M238 225 L273 269 L273 322" fill="none" stroke="#57606a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="292" y="294" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#172b4d"><tspan x="292" dy="0">Yes</tspan></text>
+<rect x="202" y="410" width="143" height="50" rx="7" fill="#ffffff" stroke="#34708c" stroke-width="1.5"/>
+<text x="273.5" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#172b4d"><tspan x="273.5" dy="0">Write XLSX</tspan></text>
+<rect x="202" y="498" width="143" height="50" rx="7" fill="#ffffff" stroke="#34708c" stroke-width="1.5"/>
+<text x="273.5" y="528" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#172b4d"><tspan x="273.5" dy="0">Download</tspan></text>
+<path d="M273 372 L273 410" fill="none" stroke="#57606a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M273 460 L273 498" fill="none" stroke="#57606a" stroke-width="1.5" marker-end="url(#arrow)"/>
+</svg>

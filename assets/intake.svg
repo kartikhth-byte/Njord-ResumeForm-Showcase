@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="500" viewBox="0 0 360 500" role="img" aria-labelledby="title desc">
+<title id="title">Intake and shared validation</title><desc id="desc">Magic link opens a signed-in form. Edits save drafts and feed shared validation. Validation supplies progress and the submission gate; successful submission writes stored data.</desc>
+<rect width="360" height="500" rx="12" fill="#f6f8fa"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="#57606a"/></marker></defs>
+<rect x="100" y="18" width="160" height="50" rx="7" fill="#ffffff" stroke="#34708c" stroke-width="1.5"/>
+<text x="180.0" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#172b4d"><tspan x="180.0" dy="0">Magic link</tspan></text>
+<rect x="100" y="91" width="160" height="50" rx="7" fill="#ffffff" stroke="#34708c" stroke-width="1.5"/>
+<text x="180.0" y="121" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#172b4d"><tspan x="180.0" dy="0">Signed-in form</tspan></text>
+<rect x="100" y="164" width="160" height="50" rx="7" fill="#ffffff" stroke="#34708c" stroke-width="1.5"/>
+<text x="180.0" y="194" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#172b4d"><tspan x="180.0" dy="0">Section edits</tspan></text>
+<path d="M180 68 L180 91" fill="none" stroke="#57606a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M180 141 L180 164" fill="none" stroke="#57606a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="14" y="263" width="100" height="50" rx="7" fill="#ffffff" stroke="#34708c" stroke-width="1.5"/>
+<text x="64.0" y="293" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#172b4d"><tspan x="64.0" dy="0">Save draft</tspan></text>
+<rect x="150" y="249" width="195" height="50" rx="7" fill="#ffffff" stroke="#34708c" stroke-width="1.5"/>
+<text x="247.5" y="279" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#172b4d"><tspan x="247.5" dy="0">Validate fields</tspan></text>
+<path d="M125 214 L64 235 L64 263" fill="none" stroke="#57606a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M235 214 L247 249" fill="none" stroke="#57606a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="134" y="350" width="97" height="50" rx="7" fill="#ffffff" stroke="#34708c" stroke-width="1.5"/>
+<text x="182.5" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#172b4d"><tspan x="182.5" dy="0">Progress</tspan></text>
+<rect x="245" y="350" width="100" height="50" rx="7" fill="#ffffff" stroke="#34708c" stroke-width="1.5"/>
+<text x="295.0" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#172b4d"><tspan x="295.0" dy="0">Submit gate</tspan></text>
+<path d="M200 299 L182 350" fill="none" stroke="#57606a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M285 299 L295 350" fill="none" stroke="#57606a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="103" y="432" width="157" height="50" rx="7" fill="#ffffff" stroke="#34708c" stroke-width="1.5"/>
+<text x="181.5" y="462" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#172b4d"><tspan x="181.5" dy="0">Stored data</tspan></text>
+<path d="M64 313 L64 457 L103 457" fill="none" stroke="#57606a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M295 400 L295 457 L260 457" fill="none" stroke="#57606a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="319" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#172b4d"><tspan x="319" dy="0">Valid</tspan></text>
+</svg>

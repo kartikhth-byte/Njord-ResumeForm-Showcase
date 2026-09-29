@@ -18,18 +18,7 @@ The browser makes authenticated data requests directly to Supabase as well as ed
 
 ## Intake and progress
 
-```mermaid
-%%{init: {"flowchart": {"nodeSpacing": 15, "rankSpacing": 30}}}%%
-flowchart TD
-    A[Magic link] --> B[Signed-in form]
-    B --> C[Section edits]
-    C --> D[Save draft]
-    D --> E[Stored data]
-    C --> V["Validate<br/>fields"]
-    V --> P[Progress]
-    V --> S[Submit gate]
-    S -->|Valid| E
-```
+![Draft saving and shared validation feed progress and submission.](../assets/intake.svg)
 
 The form constants define 19 sections and a mandatory subset. `applicationProgress.js` calls the same section validator used for required-field checks. This avoids treating an allocated but empty repeatable record as completed work. The [public example](../examples/README.md) isolates that decision with newly written code.
 
@@ -49,18 +38,7 @@ Compliance prompts are computed from entered document, rank, course, and service
 
 ## Search: optional AI, human decisions
 
-```mermaid
-%%{init: {"flowchart": {"nodeSpacing": 15, "rankSpacing": 30}}}%%
-flowchart TD
-    Q[Search] -->|Filters| R[Review]
-    Q -->|AI path| G{"Vectors<br/>ready?"}
-    G -->|No| N["Generate<br/>vectors"]
-    G -->|Yes| V[Retrieve]
-    V --> R
-    V -->|Has results| L[Reasoning]
-    L --> R
-    R -.->|Human decision| W[Status action]
-```
+![Standard filters bypass optional vector search and reasoning; status decisions remain human.](../assets/search.svg)
 
 AI search checks embedding readiness and retrieves matching applications through a SQL RPC. Compound queries have split/merge logic, and active application statuses filter the loaded records. The UI first displays vector results, then calls the search service again with reasoning enabled and merges available analysis into those results. The reasoning stage evaluates a limited top subset, rather than every record.
 
@@ -68,16 +46,7 @@ The reasoning helper has an unavailable-analysis fallback, while other search fa
 
 ## Customer worksheet export
 
-```mermaid
-%%{init: {"flowchart": {"nodeSpacing": 15, "rankSpacing": 30}}}%%
-flowchart TD
-    R[Export request] --> A[Check access]
-    A --> T{"XLSX<br/>ready?"}
-    T -->|No| E[Error]
-    T -->|Yes| D["Load<br/>inputs"]
-    D --> W[Write XLSX]
-    W --> F[Download]
-```
+![Access and template checks precede worksheet generation and download.](../assets/export.svg)
 
 The active browser path calls the separate worksheet service directly. That service reuses the Python writer, works in a temporary directory, and returns a workbook with download headers. Authentication/permission failures and unsupported template inputs stop generation; storage or generation errors are returned to the caller. The service provides health and configuration-readiness endpoints, but configuration readiness is not a full dependency-health probe.
 

@@ -32,17 +32,7 @@ Current checks were run on September 29, 2026. The historical smoke result is no
 
 ## How it fits together
 
-```mermaid
-%%{init: {"flowchart": {"nodeSpacing": 15, "rankSpacing": 30}}}%%
-flowchart TD
-    A[Applicant] --> UI[React app]
-    R[Recruiter] --> UI
-    UI --> DB["Supabase<br/>auth and data"]
-    UI --> EF[Edge functions]
-    EF --> DB
-    UI -->|Optional export| WS["Worksheet<br/>service"]
-    WS --> DB
-```
+![Applicants and recruiters use React, Supabase, edge functions, and optional worksheet export.](assets/overview.svg)
 
 The frontend has Vercel configuration; Supabase supplies authentication, database access, storage, and edge functions. Worksheet generation has a separate containerized service. This describes the implementation boundaries, not a fresh audit of every live deployment. [See intake, search, and export flows](docs/architecture.md).
 
@@ -65,7 +55,7 @@ The example is intentionally narrower than the application's full validation rul
 ## Applicant and operator workflows
 
 - **Applicants:** arrive through emailed magic links, save form drafts, review required fields, and submit an application.
-- **Recruiters:** sign in with username/email and password, manage prospects and requirements, review applications and compliance prompts, schedule events, and record pipeline outcomes.
+- **Recruiters:** sign in with an email username and password, manage prospects and requirements, review applications and compliance prompts, schedule events, and record pipeline outcomes.
 - **Master Recruiters:** manage team access and configuration; authorized staff can generate reports and customer worksheets.
 
 The current magic-link code is present; end-to-end delivery and rollout validation remain open in the source task list. [Follow a synthetic walkthrough](docs/walkthrough.md).
