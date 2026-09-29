@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-09-29",
+  "project": "Njord ResumeForm",
+  "scope": {
+    "basis": "current inspected implementation",
+    "form_sections": 19,
+    "mandatory_sections": 13,
+    "recruiter_roles": 3,
+    "sources": ["src/constants/formSections.js", "AGENTS.md", "src/App.jsx"]
+  },
+  "current_validation": {
+    "basis": "isolated local execution; existing installed dependencies; no production environment",
+    "lint": "passed",
+    "frontend_build": "passed_with_large_chunk_warning",
+    "test_source": "tests/smoke/applicant-validation-contract.spec.js",
+    "test_cases": 16,
+    "passed": 16,
+    "failed": 0,
+    "skipped": 0,
+    "runs": 1,
+    "sample_kind": "authored test payloads, not applicant records",
+    "browser_or_backend_exercised": false
+  },
+  "historical_smoke": {
+    "snapshot_date": "2026-06-08",
+    "basis": "documentation-reported; not rerun for this showcase",
+    "sources": ["README.md", "docs/test-plan.md"],
+    "reported_test_outcomes": 79,
+    "passed": 77,
+    "skipped": 2,
+    "unique_applicant_samples": null,
+    "limitation": "Some current smoke expectations still target the historical Google-login flow."
+  },
+  "public_example": {
+    "basis": "new illustrative code; synthetic fixtures",
+    "scenario_count": 3,
+    "sections_per_scenario": 2,
+    "test_cases": 8,
+    "passed": 8,
+    "failed": 0,
+    "runs": 1,
+    "production_code": false,
+    "sources": ["examples/intake-demo.mjs", "examples/intake-demo.test.mjs", "examples/synthetic-scenarios.json"]
+  },
+  "unmeasured": ["business impact", "production user scale", "model accuracy", "end-to-end matching quality", "uptime", "concurrent application-insert safety"]
+}

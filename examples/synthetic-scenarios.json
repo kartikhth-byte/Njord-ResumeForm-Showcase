@@ -1,0 +1,23 @@
+[
+  {
+    "id": "blank-row",
+    "draft": {
+      "education": [{ "institution": "", "qualification": "", "from": "", "to": "" }],
+      "declaration": { "consent": false, "signature": "" }
+    }
+  },
+  {
+    "id": "partial",
+    "draft": {
+      "education": [{ "institution": "Synthetic Maritime Academy", "qualification": "Demo course", "from": "2020-01-01", "to": "2021-01-01" }],
+      "declaration": { "consent": false, "signature": "" }
+    }
+  },
+  {
+    "id": "complete",
+    "draft": {
+      "education": [{ "institution": "Synthetic Maritime Academy", "qualification": "Demo course", "from": "2020-01-01", "to": "2021-01-01" }],
+      "declaration": { "consent": true, "signature": "SYNTHETIC SIGNATURE" }
+    }
+  }
+]
