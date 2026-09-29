@@ -19,15 +19,16 @@ The browser makes authenticated data requests directly to Supabase as well as ed
 ## Intake and progress
 
 ```mermaid
+%%{init: {"flowchart": {"nodeSpacing": 15, "rankSpacing": 30}}}%%
 flowchart TD
-    A[Emailed applicant link] --> B[Authenticated form]
+    A[Magic link] --> B[Signed-in form]
     B --> C[Section edits]
-    C --> D[Debounced draft save]
-    D --> E[Application data]
-    C --> V[Shared field validation]
-    V --> P[Progress and completion]
-    V --> S[Submission checks]
-    S -->|Required checks pass| E
+    C --> D[Save draft]
+    D --> E[Stored data]
+    C --> V["Validate<br/>fields"]
+    V --> P[Progress]
+    V --> S[Submit gate]
+    S -->|Valid| E
 ```
 
 The form constants define 19 sections and a mandatory subset. `applicationProgress.js` calls the same section validator used for required-field checks. This avoids treating an allocated but empty repeatable record as completed work. The [public example](../examples/README.md) isolates that decision with newly written code.
@@ -49,15 +50,16 @@ Compliance prompts are computed from entered document, rank, course, and service
 ## Search: optional AI, human decisions
 
 ```mermaid
+%%{init: {"flowchart": {"nodeSpacing": 15, "rankSpacing": 30}}}%%
 flowchart TD
-    Q[Recruiter search] -->|Standard filters| R[Review applications]
-    Q -->|AI search selected| G{Embeddings ready?}
-    G -->|No| N[Prompt staff to generate]
-    G -->|Yes| V[Vector retrieval]
+    Q[Search] -->|Filters| R[Review]
+    Q -->|AI path| G{"Vectors<br/>ready?"}
+    G -->|No| N["Generate<br/>vectors"]
+    G -->|Yes| V[Retrieve]
     V --> R
-    V -->|Results available| L[Additional reasoning pass]
+    V -->|Has results| L[Reasoning]
     L --> R
-    R -.->|Human decision| W[Workflow status action]
+    R -.->|Human decision| W[Status action]
 ```
 
 AI search checks embedding readiness and retrieves matching applications through a SQL RPC. Compound queries have split/merge logic, and active application statuses filter the loaded records. The UI first displays vector results, then calls the search service again with reasoning enabled and merges available analysis into those results. The reasoning stage evaluates a limited top subset, rather than every record.
@@ -67,13 +69,14 @@ The reasoning helper has an unavailable-analysis fallback, while other search fa
 ## Customer worksheet export
 
 ```mermaid
+%%{init: {"flowchart": {"nodeSpacing": 15, "rankSpacing": 30}}}%%
 flowchart TD
-    R[Recruiter export request] --> A[Verify session and permission]
-    A --> T{Active XLSX template?}
-    T -->|No| E[Return error to caller]
-    T -->|Yes| D[Fetch template and application]
-    D --> W[Python workbook writer]
-    W --> F[Return XLSX download]
+    R[Export request] --> A[Check access]
+    A --> T{"XLSX<br/>ready?"}
+    T -->|No| E[Error]
+    T -->|Yes| D["Load<br/>inputs"]
+    D --> W[Write XLSX]
+    W --> F[Download]
 ```
 
 The active browser path calls the separate worksheet service directly. That service reuses the Python writer, works in a temporary directory, and returns a workbook with download headers. Authentication/permission failures and unsupported template inputs stop generation; storage or generation errors are returned to the caller. The service provides health and configuration-readiness endpoints, but configuration readiness is not a full dependency-health probe.
